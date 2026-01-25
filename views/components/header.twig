@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-dark navbar-top py-0">
+	<div class="container">
+		<a class="navbar-brand" href="/"></a>
+
+		<button class="navbar-toggler" type="button"
+			data-toggle="collapse"
+			data-target="#primaryNavbar"
+			aria-controls="primaryNavbar"
+			aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="primaryNavbar">
+			<ul class="navbar-nav header-links mr-auto">
+				<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="/games">Games</a></li>
+				<li class="nav-item"><a class="nav-link" href="/catalog">Catalog</a></li>
+				<li class="nav-item"><a class="nav-link" href="/develop">Develop</a></li>
+				<li class="nav-item"><a class="nav-link" href="/forum">Forum</a></li>
+				<li class="nav-item"><a class="nav-link" href="/browse">People</a></li>
+
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#"
+						id="moreDropdown"
+						role="button"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false">
+						More
+					</a>
+					<div class="dropdown-menu mt-0" aria-labelledby="moreDropdown">
+						<a class="dropdown-item" href="/discord">Discord</a>
+					</div>
+				</li>
+			</ul>
+			<div class="navbar-nav d-flex align-items-center justify-content-center dropdown">
+				<li class="nav-link dropdown-toggle d-flex align-items-center justify-content-center" href="#"
+						id="profileDropdown"
+						role="button"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false">
+					<a class="navbar-nav nav-link mr-2" href="/user?ID=67">Whudder</a>
+					<img class="rounded" src="https://cdn.watrbx.wtf/2df7b079adb9f1ae79cc6a1638567d11" width="25" height="25">
+				</li>
+				<div class="dropdown-menu mt-0" aria-labelledby="profileDropdown">
+					<a class="dropdown-item" href="/user?id=67">Profile</a>
+					<a class="dropdown-item" href="/user?id=67">Avatar</a>
+					<a class="dropdown-item" href="/user?id=67">Logout</a>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</nav>
+
