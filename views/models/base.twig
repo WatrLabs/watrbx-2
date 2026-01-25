@@ -1,17 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/custom.css">
+    <link rel="stylesheet" href="/assets/css/custom.css?t=3">
     <script src="/assets/js/jquery-3.0.0.min.js"></script>
+    {% block headerIncludes %}{% endblock %}
     <title>{% block pageName %}{% endblock %}</title>
   </head>
-  <body>
+  <body class="d-flex flex-column h-100">
     {% include "components/header.twig" %}
-
     {% block body %}{% endblock %}
+    {% include "components/footer.twig" %}
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

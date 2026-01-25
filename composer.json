@@ -13,7 +13,10 @@
         "nesbot/carbon": "^3.10",
         "benhall14/php-pagination": "^1.2",
         "robmorgan/phinx": "^0.16.10",
-        "twig/twig": "^3.0"
+        "twig/twig": "^3.0",
+        "scssphp/scssphp": "^2.1.0",
+        "phpunit/phpunit": "^12.5",
+        "twbs/bootstrap": "^5.3"
     },
     "autoload": {
         "psr-4": {

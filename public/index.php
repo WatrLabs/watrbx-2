@@ -26,7 +26,8 @@ try {
         $router = new routing();
 
         $routers = [
-            "web"
+            "web",
+            "css"
         ];
 
         foreach ($routers as $r) {
@@ -57,6 +58,7 @@ function handle_error($e){
         http_response_code(500);
 
         global $twig;
+        header("Content-type: text/html");
         echo $twig->render('statusCodes/500.twig');
 
     } catch(ErrorException $e){
@@ -66,6 +68,8 @@ function handle_error($e){
         echo $e;
 
         file_put_contents("../storage/errorlog.log", $e . "\n\n", FILE_APPEND);
+
+        header("Content-type: text/plain");
         die("watrbx couldn't proccess your request. please try again later.");
     }
 }

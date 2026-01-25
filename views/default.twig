@@ -1,8 +1,18 @@
 {% extends "models/base.twig" %}
 {% block pageName %}Landing{% endblock %}
 {% block headerIncludes %}
+    <link rel="stylesheet" href="/assets/css/index.css?t=3">
 {% endblock %}
 
 {% block body %}
-    <h1>whudder chill</h1>  
+    <div id="index-banner" class="container-fluid d-flex justify-content-between text-white">
+        <div class=" d-flex flex-column justify-content-center px-5 py-5">
+            <h1>welcome to watrbx</h1>
+            <p>we put games on your gaming device.</p>
+            <button type="button" class="btn btn-primary">get started</button>
+        </div>
+        <div class="pr-25 d-flex flex-column justify-content-center px-5 py-5">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/0E9kzyAwC9Y?si=h-F-TIPLgpDG_Hz5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
 {% endblock %}
