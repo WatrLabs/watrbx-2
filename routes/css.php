@@ -15,8 +15,20 @@ $router->group('/api/v1/css', function($router) {
         $cssHelper = new cssHelper;
 
         header("Content-type: text/css");
+        $expires = 3600000; 
+        header("Pragma: public", true); // For backward compatibility
+        header("Cache-Control: public, max-age=$expires, no-transform", true);
+        header('Expires: ' . gmdate('D, d M Y H:i:s', time() + $expires) . ' GMT', true);
 
-        die($cssHelper::compileCss(dirname(__DIR__) . '/vendor/twbs/bootstrap/scss/bootstrap.scss'));
+        if(isset($_GET["Name"])){
+            $name = $_GET["Name"];
+
+            if($name == "bootstrap"){
+                // really really need to improve this
+                die($cssHelper::serveCSS(dirname(__DIR__) . '/vendor/twbs/bootstrap/scss/bootstrap.scss'));
+            }
+
+        }
     });
     
 });

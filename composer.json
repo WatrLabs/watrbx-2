@@ -16,7 +16,7 @@
         "twig/twig": "^3.0",
         "scssphp/scssphp": "^2.1.0",
         "phpunit/phpunit": "^12.5",
-        "twbs/bootstrap": "^5.3"
+        "twbs/bootstrap": "4.6.2"
     },
     "autoload": {
         "psr-4": {

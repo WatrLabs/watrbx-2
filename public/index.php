@@ -4,8 +4,11 @@ use watrlabs\routing;
 use watrlabs\authentication;
 use watrlabs\users\getuserinfo;
 use watrlabs\sitefunctions;
+use watrlabs\errors;
 
 require_once '../init.php';
+
+$errors = new \watrlabs\errors;
 
 try {
 
@@ -42,36 +45,22 @@ try {
         ob_end_flush();
 
     } catch(PDOException $e){
-        handle_error($e);
+        if($_ENV["APP_DEBUG"] == "true"){
+            $errors::handleDebugError($e);
+        } else {
+            $errors::showFriendlyError($e);
+        }
     }
 
     
 } catch(ErrorException $e){
-    handle_error($e);
-}
-
-function handle_error($e){
-    try {
-        ob_clean();
-
-        file_put_contents("../storage/errorlog.log", $e . "\n\n", FILE_APPEND);
-        http_response_code(500);
-
-        global $twig;
-        header("Content-type: text/html");
-        echo $twig->render('statusCodes/500.twig');
-
-    } catch(ErrorException $e){
-        ob_clean();
-
-        http_response_code(500);
-        echo $e;
-
-        file_put_contents("../storage/errorlog.log", $e . "\n\n", FILE_APPEND);
-
-        header("Content-type: text/plain");
-        die("watrbx couldn't proccess your request. please try again later.");
+    if($_ENV["APP_DEBUG"] == "true"){
+        $errors::handleDebugError($e);
+    } else {
+        $errors::showFriendlyError($e);
     }
 }
+
+
 
 // aaaaaaaaaaaaaaaa my brain hurts 

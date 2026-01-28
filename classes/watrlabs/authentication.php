@@ -8,6 +8,8 @@ class authentication {
     private $sessionName = null;
     private $currentSession = null;
 
+    // inits the class
+    // also will return user data depending on if a userid was provided
     function __construct($id = null) {
         global $db;
 
@@ -23,6 +25,7 @@ class authentication {
         }
     }
 
+    // returns user data straight from the database if a userid or username is provided
     public function getUserInfo($User, $Multiple){
 
         $useId = false;
@@ -45,6 +48,7 @@ class authentication {
         }
     }
 
+    // checks if the user is currently authenticated and has a session
     public function hasAccount() {
         return (bool) $this->currentSession;
     }
