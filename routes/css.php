@@ -23,9 +23,16 @@ $router->group('/api/v1/css', function($router) {
         if(isset($_GET["Name"])){
             $name = $_GET["Name"];
 
-            if($name == "bootstrap"){
-                // really really need to improve this
-                die($cssHelper::serveCSS(dirname(__DIR__) . '/vendor/twbs/bootstrap/scss/bootstrap.scss'));
+            $cssFiles = [
+                "bootstrap"=>dirname(__DIR__) . "/vendor/twbs/bootstrap/scss/bootstrap.scss",
+                "custom"=>dirname(__DIR__) . '/storage/public/css/custom.scss',
+                "index"=>dirname(__DIR__) . '/storage/public/css/index.scss'
+            ];
+
+            if(isset($cssFiles[$name])){
+                return $cssHelper::serveCSS($cssFiles[$name]);
+            } else {
+                http_response_code(404);
             }
 
         }

@@ -7,9 +7,6 @@ use ScssPhp\ScssPhp\Compiler;
 use ScssPhp\ScssPhp\Logger\QuietLogger;
 use ScssPhp\ScssPhp\OutputStyle;
 
-
-use \watrlabs\encryption;
-
 class cssHelper {
 
     // compiles and returns compiled scss

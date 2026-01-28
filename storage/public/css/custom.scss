@@ -1,0 +1,16 @@
+$color_1: rgba(255, 255, 255);
+
+.navbar {
+	background: #085078;
+	background: -webkit-linear-gradient(to left, #85D8CE, #085078);
+	background: linear-gradient(to left, #85D8CE, #085078);
+	&:hover {
+		color: $color_1;
+	}
+}
+
+img.emoji {
+	height: 20px;
+	width: 20px;
+	vertical-align: -5px;
+}

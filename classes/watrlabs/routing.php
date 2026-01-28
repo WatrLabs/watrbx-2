@@ -82,7 +82,8 @@ class Routing {
                 echo json_encode($method);
                 die();
             } else {
-                return $method;
+                echo $method;
+                return;
             }
         }
         

@@ -59,10 +59,15 @@ $twig->addFunction(new \Twig\TwigFunction('env', function ($key) {
 }));
 
 $auth = new authentication();
+
 if($auth->hasaccount()){
     $currentuser = $auth->getuserinfo($_COOKIE["_ROBLOSECURITY"]);
 } else {
     $currentuser = null;
 }
+
+// adds localization & eotd stuff
+$twig->addExtension(new app\twig\twigLocalization());
+$twig->addExtension(new app\twig\eotdHelper());
 
 $twig->addGlobal('currentuser', $currentuser);
