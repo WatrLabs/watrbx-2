@@ -21,7 +21,7 @@ class cssHelper {
 
             return $result->getCss();
         } else {
-            throw(new ErrorException("Failed to find scss file!"));
+            throw(new \ErrorException("Failed to find scss file!"));
         } 
     }
 

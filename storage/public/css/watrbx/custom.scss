@@ -1,0 +1,22 @@
+@import "footer.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+	font-family: 'Roboto', sans-serif;
+}
+
+
+.navbar {
+	background: #085078;
+	background: -webkit-linear-gradient(to left, #85D8CE, #085078);
+	background: linear-gradient(to left, #85D8CE, #085078);
+	&:hover {
+		color: white;
+	}
+}
+
+img.emoji {
+	height: 20px;
+	width: 20px;
+	vertical-align: -5px;
+}

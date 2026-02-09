@@ -1,9 +1,19 @@
-<footer class="bg-dark footer mt-auto justify-content-center">
-  <div class="container justify-content-center">
-    <p class="text-white mb-0 m-2">watrbx 2026 - <span title="Emoji of the day">{{ eotd() }}</span></p>
+<footer class="footer mt-auto py-3 text-center">
+  <div class="container small text-muted">
+    <span>© <span id="year"></span> watrbx</span>
+    <span class="mx-2">-</span>
+    <span title="emoji of the day" aria-label="emoji of the day" id="eotd">
+      {{ eotd() }}
+    </span>
+    <span class="mx-2">-</span>
+    <span class="footer-tag">lucky number: {{ rand(0,1000) }}</span>
+    <br>
+    <span class="footer-tag">Privacy - Terms - Stats - DMCA</span>
   </div>
 </footer>
+
+
 <script>
-  // FUCKING GENIUS 🧠🧠🧠🧠🧠🧠🧠
-  twemoji.parse(document);
+  document.getElementById("year").textContent = new Date().getFullYear();
+  twemoji.parse(document.querySelector("footer"));
 </script>

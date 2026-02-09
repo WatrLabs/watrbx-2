@@ -14,6 +14,9 @@ class eotdHelper extends AbstractExtension
             new TwigFunction('eotd', function () {
                 return emojis::getEmoji();
             }),
+            new TwigFunction('rand', function ($min, $max) {
+                return rand($min, $max);
+            }),
         ];
     }
 }

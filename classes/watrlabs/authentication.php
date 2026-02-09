@@ -28,14 +28,9 @@ class authentication {
     // returns user data straight from the database if a userid or username is provided
     public function getUserInfo($User, $Multiple){
 
-        $useId = false;
         $query = null;
 
         if(is_int($User)){
-            $useId = True;
-        }
-
-        if($useId){
             $query = $this->db->table("users")->where("id", $id);
         } else {
             $query = $this->db->table("users")->where("username", $User);

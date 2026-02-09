@@ -25,8 +25,8 @@ $router->group('/api/v1/css', function($router) {
 
             $cssFiles = [
                 "bootstrap"=>dirname(__DIR__) . "/vendor/twbs/bootstrap/scss/bootstrap.scss",
-                "custom"=>dirname(__DIR__) . '/storage/public/css/custom.scss',
-                "index"=>dirname(__DIR__) . '/storage/public/css/index.scss'
+                "custom"=>dirname(__DIR__) . '/storage/public/css/watrbx/custom.scss',
+                "index"=>dirname(__DIR__) . '/storage/public/css/watrbx/index.scss'
             ];
 
             if(isset($cssFiles[$name])){
