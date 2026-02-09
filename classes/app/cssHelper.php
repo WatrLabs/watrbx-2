@@ -25,4 +25,15 @@ class cssHelper {
         } 
     }
 
+    static function getCssPath(string $name){
+        $prepend = dirname(__DIR__) . '/storage/public/css/watrbx/';
+
+        if(file_exists($prepend . $name . ".scss")){
+            return $prepend . $name . ".scss";
+        } else {
+            throw(new \ErrorException("Failed to find scss file!"));
+        }
+
+    }
+
 }

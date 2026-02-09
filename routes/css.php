@@ -14,8 +14,9 @@ $router->group('/api/v1/css', function($router) {
 
         $cssHelper = new cssHelper;
 
-        header("Content-type: text/css");
         $expires = 3600000; 
+
+        header("Content-type: text/css");
         header("Pragma: public", true); // For backward compatibility
         header("Cache-Control: public, max-age=$expires, no-transform", true);
         header('Expires: ' . gmdate('D, d M Y H:i:s', time() + $expires) . ' GMT', true);
