@@ -3,7 +3,6 @@ use Pixie\Connection;
 use Pixie\QueryBuilder\QueryBuilderHandler;
 use watrlabs\authentication;
 
-global $dotenv;
 global $db;
 global $twig;
 global $currentuser;
